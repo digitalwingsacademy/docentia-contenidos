@@ -1,0 +1,21 @@
+titulo: "Introducción a la competencia digital"
+orden: 1
+secciones:
+  - id: que-es-la-competencia-digital
+    archivo: 01-que-es-la-competencia-digital.mdx
+    tipo: texto
+    titulo: "¿Qué es la competencia digital docente?"
+    duracionMinutos: 20
+    orden: 1
+  - id: marco-europeo-digcompedu
+    archivo: 02-el-marco-europeo-digcompedu.mdx
+    tipo: video
+    titulo: "El marco europeo DigCompEdu"
+    duracionMinutos: 25
+    orden: 2
+  - id: quiz-introduccion
+    archivo: quiz.yml
+    tipo: quiz
+    titulo: "Comprueba lo aprendido"
+    duracionMinutos: 15
+    orden: 3

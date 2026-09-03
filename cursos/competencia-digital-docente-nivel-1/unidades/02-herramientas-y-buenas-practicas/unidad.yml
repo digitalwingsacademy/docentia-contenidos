@@ -1,0 +1,15 @@
+titulo: "Herramientas y buenas prácticas"
+orden: 2
+secciones:
+  - id: herramientas-digitales-aula
+    archivo: 01-herramientas-digitales-en-el-aula.mdx
+    tipo: texto
+    titulo: "Herramientas digitales para el aula"
+    duracionMinutos: 20
+    orden: 1
+  - id: buenas-practicas-seguridad
+    archivo: 02-buenas-practicas-y-seguridad.mdx
+    tipo: texto
+    titulo: "Buenas prácticas y seguridad digital"
+    duracionMinutos: 15
+    orden: 2

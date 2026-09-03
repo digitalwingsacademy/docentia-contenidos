@@ -1,0 +1,81 @@
+passingScore: 70
+maxIntentos: 3
+criterioAprobado: mejor_intento
+preguntas:
+  - id: p1-alfabetizacion-vs-competencia
+    enunciado: >
+      ¿Cuál es la principal diferencia entre "alfabetización digital" y "competencia digital
+      docente"?
+    opciones:
+      - id: a
+        texto: "No hay diferencia, son sinónimos."
+      - id: b
+        texto: "La competencia digital docente implica integrar la tecnología con intención pedagógica, no solo saber usarla."
+      - id: c
+        texto: "La alfabetización digital es solo para el alumnado, la competencia digital solo para el profesorado."
+      - id: d
+        texto: "La competencia digital docente se refiere únicamente al uso de redes sociales en el aula."
+    respuestaCorrectaId: b
+    explicacion: >
+      Saber manejar herramientas es alfabetización digital; decidir cuándo y cómo usarlas para
+      mejorar el aprendizaje es competencia digital docente.
+
+  - id: p2-quien-publica-digcompedu
+    enunciado: "¿Quién publica el marco DigCompEdu?"
+    opciones:
+      - id: a
+        texto: "La Comisión Europea."
+      - id: b
+        texto: "Cada colegio de forma independiente."
+      - id: c
+        texto: "Una empresa privada de tecnología educativa."
+      - id: d
+        texto: "La UNESCO."
+    respuestaCorrectaId: a
+    explicacion: "DigCompEdu es un marco publicado por la Comisión Europea (Joint Research Centre)."
+
+  - id: p3-numero-areas
+    enunciado: "¿Cuántas áreas de competencia define el marco DigCompEdu?"
+    opciones:
+      - id: a
+        texto: "Tres."
+      - id: b
+        texto: "Cuatro."
+      - id: c
+        texto: "Cinco."
+      - id: d
+        texto: "Seis."
+    respuestaCorrectaId: c
+    explicacion: >
+      Cinco áreas: compromiso profesional, contenidos digitales, enseñanza y aprendizaje,
+      evaluación, y empoderamiento de los alumnos.
+
+  - id: p4-niveles-progresion
+    enunciado: "¿Cuántos niveles de progresión define DigCompEdu, de A1 a C2?"
+    opciones:
+      - id: a
+        texto: "Tres."
+      - id: b
+        texto: "Cuatro."
+      - id: c
+        texto: "Cinco."
+      - id: d
+        texto: "Seis."
+    respuestaCorrectaId: d
+    explicacion: "Seis niveles: A1, A2, B1, B2, C1 y C2."
+
+  - id: p5-ejemplo-evaluacion
+    enunciado: >
+      Un docente usa un cuestionario autocorregible para dar feedback inmediato al alumnado.
+      ¿A qué área de DigCompEdu corresponde principalmente?
+    opciones:
+      - id: a
+        texto: "Compromiso profesional."
+      - id: b
+        texto: "Contenidos digitales."
+      - id: c
+        texto: "Evaluación."
+      - id: d
+        texto: "Empoderamiento de los alumnos."
+    respuestaCorrectaId: c
+    explicacion: "Dar feedback mediante herramientas digitales pertenece al área de Evaluación."

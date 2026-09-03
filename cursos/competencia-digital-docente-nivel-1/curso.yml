@@ -1,0 +1,11 @@
+slug: competencia-digital-docente-nivel-1
+version: 1
+titulo: "Competencia Digital Docente — Nivel 1"
+resumen: >
+  Introducción a la competencia digital docente según el marco europeo DigCompEdu:
+  qué es, por qué importa y cómo empezar a aplicarla en el aula con herramientas y
+  buenas prácticas concretas.
+horasEstimadas: 1.75
+unidades:
+  - 01-introduccion
+  - 02-herramientas-y-buenas-practicas

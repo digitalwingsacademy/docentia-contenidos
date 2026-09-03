@@ -1,0 +1,15 @@
+{
+  "name": "docentia-contenidos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cursos de Docentia en MDX + YAML (ver ADR-002 de docentia-plataforma)",
+  "scripts": {
+    "content:validate": "tsx scripts/validate.ts"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "zod": "^3.24.0"
+  }
+}
