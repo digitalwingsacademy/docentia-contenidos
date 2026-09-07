@@ -6,7 +6,7 @@ import { z } from "zod";
 // es que cualquier cambio de forma se nota porque ambos validadores fallan
 // a la vez con contenido real, no que haya un check automatico cruzado.
 
-export const seccionTipoSchema = z.enum(["video", "texto", "quiz"]);
+export const seccionTipoSchema = z.enum(["video", "texto", "quiz", "actividad"]);
 
 export const unidadYmlSchema = z.object({
   titulo: z.string().min(1),
@@ -41,6 +41,31 @@ export const quizYmlSchema = z.object({
   preguntas: z.array(quizPreguntaSchema).min(1),
 });
 export type QuizYml = z.infer<typeof quizYmlSchema>;
+
+// Actividades interactivas (docs/formato-actividades.md en docentia-plataforma).
+// Por ahora solo se implementa el subtipo rellenar-huecos.
+export const huecoSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  respuesta: z.string().min(1),
+  acepta: z.array(z.string().min(1)).optional(),
+  pista: z.string().optional(),
+});
+
+export const reintentosSchema = z.object({
+  maximos: z.union([z.number().int().positive(), z.literal("ilimitado")]).default("ilimitado"),
+  mostrarSolucionAl: z.enum(["siempre", "agotar_intentos", "nunca"]).default("siempre"),
+});
+
+export const rellenarHuecosYmlSchema = z.object({
+  tipo: z.literal("rellenar-huecos"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  bancoPalabras: z.boolean(),
+  texto: z.string().min(1),
+  huecos: z.array(huecoSchema).min(1),
+});
+export type RellenarHuecosYml = z.infer<typeof rellenarHuecosYmlSchema>;
 
 export const cursoYmlSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, "el slug solo admite minusculas, numeros y guiones"),

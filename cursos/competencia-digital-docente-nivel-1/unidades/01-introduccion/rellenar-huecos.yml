@@ -1,0 +1,33 @@
+tipo: rellenar-huecos
+instrucciones: "Completa el texto con el nivel o el área de DigCompEdu correctos. Puedes usar el banco de palabras o escribir directamente."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: siempre }
+bancoPalabras: true
+texto: |
+  En DigCompEdu cada docente progresa por seis niveles. Quien usa la tecnología de forma muy
+  básica y guiada es un/a {{1}}. Cuando empieza a usarla sin apoyo, aunque solo de forma
+  puntual, pasa a ser un/a {{2}}. Un/a {{3}} ya integra la tecnología en varias prácticas
+  docentes habituales, y un/a {{4}} la usa de forma flexible, creativa y crítica. Quien
+  comparte su práctica y guía a otros docentes es un/a {{5}}; en la cima, un/a {{6}} cuestiona
+  y mejora las prácticas digitales existentes, incluso las propias. Diseñar una secuencia con
+  lectura, vídeo y actividad colaborativa es un ejemplo del área de {{7}}. Usar un
+  cuestionario autocorregible para dar feedback inmediato es un ejemplo del área de {{8}}.
+huecos:
+  - id: 1
+    respuesta: "Recién llegado/a"
+    pista: "Nivel A1: el más inicial, con mucho apoyo."
+  - id: 2
+    respuesta: "Explorador/a"
+  - id: 3
+    respuesta: "Integrador/a"
+  - id: 4
+    respuesta: "Experto/a"
+  - id: 5
+    respuesta: "Líder"
+  - id: 6
+    respuesta: "Pionero/a"
+    pista: "Nivel C2: cuestiona y mejora incluso su propia práctica."
+  - id: 7
+    respuesta: "Enseñanza y aprendizaje"
+  - id: 8
+    respuesta: "Evaluación"

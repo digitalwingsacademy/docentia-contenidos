@@ -11,7 +11,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { load as parseYaml } from "js-yaml";
-import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema } from "./schema";
+import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema, rellenarHuecosYmlSchema } from "./schema";
 
 const CURSOS_DIR = "cursos";
 const errors: string[] = [];
@@ -82,6 +82,25 @@ function validateCurso(slug: string) {
               `${archivoPath}: la pregunta "${pregunta.id}" tiene respuestaCorrectaId "${pregunta.respuestaCorrectaId}" que no coincide con ninguna opcion (${idsValidos.join(", ")})`
             );
           }
+        }
+      }
+
+      if (seccion.tipo === "actividad") {
+        const parsedActividad = rellenarHuecosYmlSchema.safeParse(readYaml(archivoPath));
+        if (!parsedActividad.success) {
+          errors.push(`${archivoPath}: ${parsedActividad.error.message}`);
+          continue;
+        }
+        const actividad = parsedActividad.data;
+        const idsEnTexto = [...actividad.texto.matchAll(/\{\{([^}]+)\}\}/g)].map((m) => m[1]);
+        const idsEnHuecos = actividad.huecos.map((h) => String(h.id));
+        const faltanEnTexto = idsEnHuecos.filter((id) => !idsEnTexto.includes(id));
+        const faltanEnHuecos = idsEnTexto.filter((id) => !idsEnHuecos.includes(id));
+        if (faltanEnTexto.length > 0) {
+          errors.push(`${archivoPath}: los huecos [${faltanEnTexto.join(", ")}] no aparecen como {{id}} en "texto"`);
+        }
+        if (faltanEnHuecos.length > 0) {
+          errors.push(`${archivoPath}: "texto" referencia {{${faltanEnHuecos.join("}}, {{")}} sin un hueco declarado`);
         }
       }
     }

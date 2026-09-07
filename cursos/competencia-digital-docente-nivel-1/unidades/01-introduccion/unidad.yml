@@ -13,9 +13,15 @@ secciones:
     titulo: "El marco europeo DigCompEdu"
     duracionMinutos: 25
     orden: 2
+  - id: repaso-niveles-digcompedu
+    archivo: rellenar-huecos.yml
+    tipo: actividad
+    titulo: "Repasa los niveles de DigCompEdu"
+    duracionMinutos: 10
+    orden: 3
   - id: quiz-introduccion
     archivo: quiz.yml
     tipo: quiz
     titulo: "Comprueba lo aprendido"
     duracionMinutos: 15
-    orden: 3
+    orden: 4
