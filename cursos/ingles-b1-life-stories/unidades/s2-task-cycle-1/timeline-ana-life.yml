@@ -1,0 +1,29 @@
+tipo: ordenar
+instrucciones: "Asigna el orden cronológico correcto a cada evento de la vida de Ana."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+eventos:
+  - id: 1
+    texto: "She was born in a small town in Galicia."
+    posicion: 1
+  - id: 2
+    texto: "She used to walk to school with her brother every day."
+    posicion: 2
+  - id: 3
+    texto: "Her family moved to Madrid when she was twelve."
+    posicion: 3
+  - id: 4
+    texto: "She went to secondary school in Madrid."
+    posicion: 4
+  - id: 5
+    texto: "She graduated from university with a degree in architecture."
+    posicion: 5
+  - id: 6
+    texto: "She got married and moved abroad."
+    posicion: 6
+  - id: 7
+    texto: "She started her own design company."
+    posicion: 8
+  - id: 8
+    texto: "She won her first national architecture award."
+    posicion: 9

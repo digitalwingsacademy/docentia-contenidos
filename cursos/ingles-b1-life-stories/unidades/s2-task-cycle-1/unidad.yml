@@ -1,0 +1,39 @@
+titulo: "Sesión 2 — Task Cycle 1"
+orden: 2
+fase: "Task Cycle 1"
+secciones:
+  - id: grammar-past-tenses
+    archivo: grammar-past-tenses.mdx
+    tipo: texto
+    titulo: "Grammar Reference: Past Tenses in Narrative"
+    duracionMinutos: 20
+    orden: 1
+    obligatoria: true
+  - id: gap-fill-chance-meeting
+    archivo: gap-fill-chance-meeting.yml
+    tipo: actividad
+    titulo: 'Gap-fill: Past Simple vs Past Continuous — "A Chance Meeting"'
+    duracionMinutos: 20
+    orden: 2
+    obligatoria: true
+  - id: matching-life-events
+    archivo: matching-life-events.yml
+    tipo: actividad
+    titulo: "Matching: Life Events, Phrasal Verbs & Emotions"
+    duracionMinutos: 20
+    orden: 3
+    obligatoria: true
+  - id: phonetics-ed-endings
+    archivo: phonetics-ed-endings.yml
+    tipo: actividad
+    titulo: "Pronunciation: -ed Endings"
+    duracionMinutos: 15
+    orden: 4
+    obligatoria: true
+  - id: timeline-ana-life
+    archivo: timeline-ana-life.yml
+    tipo: actividad
+    titulo: "Timeline: Order the Events in Ana's Life"
+    duracionMinutos: 25
+    orden: 5
+    obligatoria: false

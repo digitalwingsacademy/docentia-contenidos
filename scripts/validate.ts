@@ -105,6 +105,38 @@ function validateCurso(slug: string) {
             errors.push(`${archivoPath}: "texto" referencia {{${faltanEnHuecos.join("}}, {{")}} sin un hueco declarado`);
           }
         }
+
+        if (actividad.tipo === "emparejar") {
+          const terminos = actividad.pares.map((p) => p.termino.trim().toLowerCase());
+          const definiciones = actividad.pares.map((p) => p.definicion.trim().toLowerCase());
+          const terminosDup = terminos.filter((t, i) => terminos.indexOf(t) !== i);
+          const definicionesDup = definiciones.filter((d, i) => definiciones.indexOf(d) !== i);
+          if (terminosDup.length > 0) {
+            errors.push(`${archivoPath}: terminos duplicados: [${[...new Set(terminosDup)].join(", ")}]`);
+          }
+          if (definicionesDup.length > 0) {
+            errors.push(`${archivoPath}: definiciones duplicadas: [${[...new Set(definicionesDup)].join(", ")}]`);
+          }
+        }
+
+        if (actividad.tipo === "clasificar") {
+          const idsCategorias = actividad.categorias.map((c) => c.id);
+          for (const item of actividad.items) {
+            if (!idsCategorias.includes(item.categoriaId)) {
+              errors.push(
+                `${archivoPath}: el item "${item.id}" referencia categoriaId "${item.categoriaId}", que no existe (${idsCategorias.join(", ")})`
+              );
+            }
+          }
+        }
+
+        if (actividad.tipo === "ordenar") {
+          const posiciones = actividad.eventos.map((e) => e.posicion);
+          const dup = posiciones.filter((p, i) => posiciones.indexOf(p) !== i);
+          if (dup.length > 0) {
+            errors.push(`${archivoPath}: posiciones duplicadas: [${[...new Set(dup)].join(", ")}]`);
+          }
+        }
       }
     }
 

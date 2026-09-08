@@ -88,10 +88,61 @@ export const foroYmlSchema = z.object({
 });
 export type ForoYml = z.infer<typeof foroYmlSchema>;
 
+export const parSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  termino: z.string().min(1),
+  definicion: z.string().min(1),
+});
+export const emparejarYmlSchema = z.object({
+  tipo: z.literal("emparejar"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  pares: z.array(parSchema).min(2),
+});
+export type EmparejarYml = z.infer<typeof emparejarYmlSchema>;
+
+export const categoriaSchema = z.object({
+  id: z.string().min(1),
+  etiqueta: z.string().min(1),
+  ejemplo: z.string().min(1),
+});
+export const itemClasificarSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  texto: z.string().min(1),
+  categoriaId: z.string().min(1),
+});
+export const clasificarYmlSchema = z.object({
+  tipo: z.literal("clasificar"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  categorias: z.array(categoriaSchema).min(2),
+  items: z.array(itemClasificarSchema).min(1),
+});
+export type ClasificarYml = z.infer<typeof clasificarYmlSchema>;
+
+export const eventoSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  texto: z.string().min(1),
+  posicion: z.number().int().positive(),
+});
+export const ordenarYmlSchema = z.object({
+  tipo: z.literal("ordenar"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  eventos: z.array(eventoSchema).min(2),
+});
+export type OrdenarYml = z.infer<typeof ordenarYmlSchema>;
+
 export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   rellenarHuecosYmlSchema,
   grabacionAudioYmlSchema,
   foroYmlSchema,
+  emparejarYmlSchema,
+  clasificarYmlSchema,
+  ordenarYmlSchema,
 ]);
 export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 

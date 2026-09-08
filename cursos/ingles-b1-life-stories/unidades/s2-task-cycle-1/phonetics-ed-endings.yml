@@ -1,0 +1,30 @@
+tipo: clasificar
+instrucciones: "Clasifica cada verbo según la pronunciación de su terminación -ed."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+categorias:
+  - id: t
+    etiqueta: "/t/"
+    ejemplo: "walked"
+  - id: d
+    etiqueta: "/d/"
+    ejemplo: "called"
+  - id: id
+    etiqueta: "/ɪd/"
+    ejemplo: "wanted"
+items:
+  - { id: 1, texto: "walked", categoriaId: t }
+  - { id: 2, texto: "watched", categoriaId: t }
+  - { id: 3, texto: "laughed", categoriaId: t }
+  - { id: 4, texto: "stopped", categoriaId: t }
+  - { id: 5, texto: "missed", categoriaId: t }
+  - { id: 6, texto: "called", categoriaId: d }
+  - { id: 7, texto: "lived", categoriaId: d }
+  - { id: 8, texto: "moved", categoriaId: d }
+  - { id: 9, texto: "planned", categoriaId: d }
+  - { id: 10, texto: "enjoyed", categoriaId: d }
+  - { id: 11, texto: "wanted", categoriaId: id }
+  - { id: 12, texto: "visited", categoriaId: id }
+  - { id: 13, texto: "decided", categoriaId: id }
+  - { id: 14, texto: "started", categoriaId: id }
+  - { id: 15, texto: "needed", categoriaId: id }

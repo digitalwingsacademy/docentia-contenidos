@@ -1,0 +1,35 @@
+tipo: emparejar
+instrucciones: "Empareja cada término con su definición."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+pares:
+  - id: 1
+    termino: "graduate"
+    definicion: "to successfully complete university studies"
+  - id: 2
+    termino: "be promoted"
+    definicion: "to be given a more important or higher-paid job"
+  - id: 3
+    termino: "retire"
+    definicion: "to stop working permanently, usually due to age"
+  - id: 4
+    termino: "move house"
+    definicion: "to go and live in a different home"
+  - id: 5
+    termino: "grow up"
+    definicion: "to develop from child into adult"
+  - id: 6
+    termino: "end up"
+    definicion: "to finally be in a situation, often unexpectedly"
+  - id: 7
+    termino: "come across"
+    definicion: "to find or meet someone/something by chance"
+  - id: 8
+    termino: "give up"
+    definicion: "to stop doing something you were trying to do"
+  - id: 9
+    termino: "overwhelmed"
+    definicion: "feeling something is too difficult or intense to deal with"
+  - id: 10
+    termino: "relieved"
+    definicion: "feeling happy because a worry has ended"

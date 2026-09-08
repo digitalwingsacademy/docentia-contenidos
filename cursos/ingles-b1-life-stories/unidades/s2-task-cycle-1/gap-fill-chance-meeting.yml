@@ -1,0 +1,33 @@
+tipo: rellenar-huecos
+instrucciones: "Completa el texto con la forma correcta. Puedes usar el banco de palabras o escribir directamente."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: siempre }
+bancoPalabras: true
+texto: |
+  Last summer, I {{1}} my hometown when I suddenly {{2}} into an old school friend. She
+  {{3}} outside the old library and {{4}} at her phone. While we {{5}}, it {{6}} to rain
+  heavily. When I was young, I {{7}} cycle to school with her. She {{8}} me that she {{9}}
+  to London two years earlier. I couldn't believe how much time {{10}}.
+huecos:
+  - id: 1
+    respuesta: "was visiting"
+    pista: "Acción larga en curso cuando pasa otra cosa (past continuous)."
+  - id: 2
+    respuesta: "bumped"
+  - id: 3
+    respuesta: "was standing"
+  - id: 4
+    respuesta: "was looking"
+  - id: 5
+    respuesta: "were talking"
+  - id: 6
+    respuesta: "started"
+  - id: 7
+    respuesta: "used to"
+  - id: 8
+    respuesta: "told"
+  - id: 9
+    respuesta: "had moved"
+    acepta: ["moved"]
+  - id: 10
+    respuesta: "had passed"
