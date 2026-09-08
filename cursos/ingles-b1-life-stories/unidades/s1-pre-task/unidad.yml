@@ -1,0 +1,18 @@
+titulo: "Sesión 1 — Pre-Task"
+orden: 1
+fase: "Pre-Task"
+secciones:
+  - id: warmup-memorable-moment
+    archivo: warmup-memorable-moment.yml
+    tipo: actividad
+    titulo: "Warm-up: Tell Us About a Memorable Moment"
+    duracionMinutos: 20
+    orden: 1
+    obligatoria: true
+  - id: foro-eventos-vida
+    archivo: foro-eventos-vida.yml
+    tipo: actividad
+    titulo: "Forum: The Five Most Important Events in My Life"
+    duracionMinutos: 25
+    orden: 2
+    obligatoria: true

@@ -11,6 +11,7 @@ export const seccionTipoSchema = z.enum(["video", "texto", "quiz", "actividad"])
 export const unidadYmlSchema = z.object({
   titulo: z.string().min(1),
   orden: z.number().int().positive(),
+  fase: z.string().optional(),
   secciones: z
     .array(
       z.object({
@@ -20,6 +21,7 @@ export const unidadYmlSchema = z.object({
         titulo: z.string().min(1),
         duracionMinutos: z.number().int().positive(),
         orden: z.number().int().positive(),
+        obligatoria: z.boolean().default(true),
       })
     )
     .min(1),
@@ -66,6 +68,32 @@ export const rellenarHuecosYmlSchema = z.object({
   huecos: z.array(huecoSchema).min(1),
 });
 export type RellenarHuecosYml = z.infer<typeof rellenarHuecosYmlSchema>;
+
+// Tipos de valoracion humana (docs/formato-actividades.md #3 en
+// docentia-plataforma): ninguno usa modo ni reintentos.
+export const grabacionAudioYmlSchema = z.object({
+  tipo: z.literal("grabacion-audio"),
+  instrucciones: z.string().min(1),
+  duracionGrabacionSegundos: z.number().int().positive(),
+  preparacionSegundos: z.number().int().min(0).default(0),
+  rubricaId: z.string().nullable().default(null),
+});
+export type GrabacionAudioYml = z.infer<typeof grabacionAudioYmlSchema>;
+
+export const foroYmlSchema = z.object({
+  tipo: z.literal("foro"),
+  instrucciones: z.string().min(1),
+  palabrasMinimasPublicacion: z.number().int().positive(),
+  requiereRespuesta: z.boolean().default(true),
+});
+export type ForoYml = z.infer<typeof foroYmlSchema>;
+
+export const actividadYmlSchema = z.discriminatedUnion("tipo", [
+  rellenarHuecosYmlSchema,
+  grabacionAudioYmlSchema,
+  foroYmlSchema,
+]);
+export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 
 export const cursoYmlSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, "el slug solo admite minusculas, numeros y guiones"),

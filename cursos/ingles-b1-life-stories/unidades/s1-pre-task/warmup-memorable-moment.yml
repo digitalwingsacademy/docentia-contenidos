@@ -1,0 +1,5 @@
+tipo: grabacion-audio
+instrucciones: "Record 60 seconds: a memorable moment from your life. When? What happened? How did you feel?"
+duracionGrabacionSegundos: 60
+preparacionSegundos: 30
+rubricaId: null
