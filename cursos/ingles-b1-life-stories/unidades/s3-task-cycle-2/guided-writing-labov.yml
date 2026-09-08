@@ -1,0 +1,20 @@
+tipo: escritura-guiada
+instrucciones: "Escribe una narración personal siguiendo las 4 fases de Labov. Usa past tenses, conectores y vocabulario de emociones."
+secciones:
+  - id: orientation
+    titulo: "1. Orientation"
+    guia: "Who? Where? When? Set the scene."
+    placeholder: 'e.g. "It was a warm July evening. I was travelling alone in Portugal for the first time..."'
+  - id: complication
+    titulo: "2. Complication"
+    guia: "What happened? Main problem or turning point."
+    placeholder: 'e.g. "While I was waiting at the station, I suddenly realised I had lost my passport..."'
+  - id: resolution
+    titulo: "3. Resolution"
+    guia: "How was it resolved? What happened in the end?"
+    placeholder: 'e.g. "Eventually, a kind stranger helped me contact the Embassy..."'
+  - id: evaluation
+    titulo: "4. Evaluation"
+    guia: "Why was this important? What did you learn?"
+    placeholder: 'e.g. "Looking back, I think this experience taught me that..."'
+rubricaId: null

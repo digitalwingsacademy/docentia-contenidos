@@ -11,7 +11,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { load as parseYaml } from "js-yaml";
-import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema, actividadYmlSchema } from "./schema";
+import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema, actividadYmlSchema, checklistYmlSchema } from "./schema";
 
 const CURSOS_DIR = "cursos";
 const errors: string[] = [];
@@ -153,6 +153,18 @@ function validateCurso(slug: string) {
           for (const palabra of actividad.palabrasCorrectas) {
             if (!actividad.texto.includes(palabra)) {
               errors.push(`${archivoPath}: "${palabra}" no aparece como substring literal de "texto"`);
+            }
+          }
+        }
+
+        if (actividad.tipo === "revision-entre-pares") {
+          const checklistPath = join(cursoDir, "unidades", unidadDir, actividad.checklist);
+          if (!existsSync(checklistPath)) {
+            errors.push(`${archivoPath}: referencia el checklist "${actividad.checklist}", que no existe`);
+          } else {
+            const parsedChecklist = checklistYmlSchema.safeParse(readYaml(checklistPath));
+            if (!parsedChecklist.success) {
+              errors.push(`${checklistPath}: ${parsedChecklist.error.message}`);
             }
           }
         }

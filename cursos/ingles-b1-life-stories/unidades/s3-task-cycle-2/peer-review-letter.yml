@@ -1,0 +1,5 @@
+tipo: revision-entre-pares
+instrucciones: "Revisa la carta de tu compañero con esta checklist. Añade un comentario constructivo."
+checklist: letter-review-criteria.yml
+minimoCriteriosMarcados: 3
+comentarioObligatorio: true

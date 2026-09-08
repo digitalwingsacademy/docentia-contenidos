@@ -1,0 +1,12 @@
+tipo: escritura-libre
+instrucciones: "Your English-speaking friend Alex has written asking what you have been up to. Write back (~120 words) describing a recent experience: what happened, how you felt, and what the result was."
+palabrasObjetivo: { min: 100, max: 140 }
+palabrasMinimasEnvio: 80
+opcionesPrompt: null
+incluirLista:
+  - "I'm writing to tell you about..."
+  - "Something amazing happened..."
+  - "While I was..."
+  - "In the end, ..."
+  - "I felt really ... because..."
+rubricaId: null

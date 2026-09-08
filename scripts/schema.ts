@@ -163,6 +163,51 @@ export const marcarPalabrasYmlSchema = z.object({
 });
 export type MarcarPalabrasYml = z.infer<typeof marcarPalabrasYmlSchema>;
 
+// Bloque reutilizable (docs/formato-actividades.md #4.1): referenciado por
+// nombre de fichero, igual que `archivo` ya funciona en unidad.yml.
+export const checklistYmlSchema = z.object({
+  criterios: z.array(z.string().min(1)).min(1),
+});
+export type ChecklistYml = z.infer<typeof checklistYmlSchema>;
+
+export const promptOpcionSchema = z.object({
+  id: z.string().min(1),
+  texto: z.string().min(1),
+});
+export const escrituraLibreYmlSchema = z.object({
+  tipo: z.literal("escritura-libre"),
+  instrucciones: z.string().min(1),
+  palabrasObjetivo: z.object({ min: z.number().int().positive(), max: z.number().int().positive() }),
+  palabrasMinimasEnvio: z.number().int().positive(),
+  opcionesPrompt: z.array(promptOpcionSchema).nullable().default(null),
+  incluirLista: z.array(z.string().min(1)).optional(),
+  rubricaId: z.string().nullable().default(null),
+});
+export type EscrituraLibreYml = z.infer<typeof escrituraLibreYmlSchema>;
+
+export const seccionEscrituraGuiadaSchema = z.object({
+  id: z.string().min(1),
+  titulo: z.string().min(1),
+  guia: z.string().min(1),
+  placeholder: z.string().min(1),
+});
+export const escrituraGuiadaYmlSchema = z.object({
+  tipo: z.literal("escritura-guiada"),
+  instrucciones: z.string().min(1),
+  secciones: z.array(seccionEscrituraGuiadaSchema).min(1),
+  rubricaId: z.string().nullable().default(null),
+});
+export type EscrituraGuiadaYml = z.infer<typeof escrituraGuiadaYmlSchema>;
+
+export const revisionEntreParesYmlSchema = z.object({
+  tipo: z.literal("revision-entre-pares"),
+  instrucciones: z.string().min(1),
+  checklist: z.string().min(1),
+  minimoCriteriosMarcados: z.number().int().positive(),
+  comentarioObligatorio: z.boolean().default(true),
+});
+export type RevisionEntreParesYml = z.infer<typeof revisionEntreParesYmlSchema>;
+
 export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   rellenarHuecosYmlSchema,
   grabacionAudioYmlSchema,
@@ -172,6 +217,9 @@ export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   ordenarYmlSchema,
   opcionMultipleYmlSchema,
   marcarPalabrasYmlSchema,
+  escrituraLibreYmlSchema,
+  escrituraGuiadaYmlSchema,
+  revisionEntreParesYmlSchema,
 ]);
 export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 

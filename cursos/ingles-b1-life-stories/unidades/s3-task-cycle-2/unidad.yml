@@ -23,3 +23,24 @@ secciones:
     duracionMinutos: 20
     orden: 3
     obligatoria: true
+  - id: guided-writing-labov
+    archivo: guided-writing-labov.yml
+    tipo: actividad
+    titulo: "Guided Writing: Labov Narrative Structure"
+    duracionMinutos: 35
+    orden: 4
+    obligatoria: true
+  - id: letter-to-friend
+    archivo: letter-to-friend.yml
+    tipo: actividad
+    titulo: "Writing: Letter to a Friend"
+    duracionMinutos: 35
+    orden: 5
+    obligatoria: true
+  - id: peer-review-letter
+    archivo: peer-review-letter.yml
+    tipo: actividad
+    titulo: "Workshop: Peer Review"
+    duracionMinutos: 25
+    orden: 6
+    obligatoria: true
