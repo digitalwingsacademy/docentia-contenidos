@@ -1,0 +1,37 @@
+tipo: correccion-errores
+instrucciones: "Cada frase tiene un error subrayado. Escribe la forma correcta."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: siempre }
+frases:
+  - id: 1
+    texto: "While I was <error>walk</error> to the station, it started to rain."
+    respuesta: "walking"
+    pista: "Past continuous: was/were + -ing"
+  - id: 2
+    texto: "She used to <error>went</error> to the beach every summer."
+    respuesta: "go"
+    pista: "used to + infinitive (base form, not past)"
+  - id: 3
+    texto: "When the alarm rang, I was <error>sleep</error> deeply."
+    respuesta: "sleeping"
+    pista: "Past continuous: was/were + -ing"
+  - id: 4
+    texto: "He <error>didn't used to</error> like spicy food."
+    respuesta: "didn't use to"
+    pista: "Negative: didn't + use to (no -d)"
+  - id: 5
+    texto: "They <error>was living</error> in London when they fell in love."
+    respuesta: "were living"
+    pista: "Plural: were (not was) + -ing"
+  - id: 6
+    texto: "<error>What you were doing</error> when I called?"
+    respuesta: "What were you doing"
+    pista: "Question order: Wh- + aux + subject + -ing"
+  - id: 7
+    texto: "Suddenly, the lights went off while we <error>eat</error> dinner."
+    respuesta: "were eating"
+    pista: "Past continuous with while: were/was + -ing"
+  - id: 8
+    texto: "I used to <error>living</error> in a small village."
+    respuesta: "live"
+    pista: "used to + infinitive (not -ing)"

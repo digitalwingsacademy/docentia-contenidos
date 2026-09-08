@@ -1,0 +1,25 @@
+titulo: "Sesión 4 — Task Cycle 3"
+orden: 4
+fase: "Task Cycle 3"
+secciones:
+  - id: extended-speaking
+    archivo: extended-speaking.yml
+    tipo: actividad
+    titulo: 'PoodLL Speaking: "A time when you felt proud or surprised"'
+    duracionMinutos: 30
+    orden: 1
+    obligatoria: true
+  - id: error-correction-tenses
+    archivo: error-correction-tenses.yml
+    tipo: actividad
+    titulo: "Error Correction: Narrative Tenses"
+    duracionMinutos: 20
+    orden: 2
+    obligatoria: true
+  - id: free-writing-best-worst-day
+    archivo: free-writing-best-worst-day.yml
+    tipo: actividad
+    titulo: '"It was the best/worst day of my life"'
+    duracionMinutos: 40
+    orden: 3
+    obligatoria: true

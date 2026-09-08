@@ -168,6 +168,17 @@ function validateCurso(slug: string) {
             }
           }
         }
+
+        if (actividad.tipo === "correccion-errores") {
+          for (const frase of actividad.frases) {
+            const marcas = frase.texto.match(/<error>.*?<\/error>/g) ?? [];
+            if (marcas.length !== 1) {
+              errors.push(
+                `${archivoPath}: la frase "${frase.id}" tiene ${marcas.length} tramos <error> (debe tener exactamente 1)`
+              );
+            }
+          }
+        }
       }
     }
 

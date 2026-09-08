@@ -208,6 +208,21 @@ export const revisionEntreParesYmlSchema = z.object({
 });
 export type RevisionEntreParesYml = z.infer<typeof revisionEntreParesYmlSchema>;
 
+export const fraseErrorSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  texto: z.string().min(1),
+  respuesta: z.string().min(1),
+  pista: z.string().optional(),
+});
+export const correccionErroresYmlSchema = z.object({
+  tipo: z.literal("correccion-errores"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  frases: z.array(fraseErrorSchema).min(1),
+});
+export type CorreccionErroresYml = z.infer<typeof correccionErroresYmlSchema>;
+
 export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   rellenarHuecosYmlSchema,
   grabacionAudioYmlSchema,
@@ -220,6 +235,7 @@ export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   escrituraLibreYmlSchema,
   escrituraGuiadaYmlSchema,
   revisionEntreParesYmlSchema,
+  correccionErroresYmlSchema,
 ]);
 export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 

@@ -1,0 +1,17 @@
+tipo: escritura-libre
+instrucciones: "Narración libre integrando todos los recursos de la unidad."
+palabrasObjetivo: { min: 150, max: 200 }
+palabrasMinimasEnvio: 100
+opcionesPrompt:
+  - id: best
+    texto: '"It was the best day of my life"'
+  - id: worst
+    texto: '"It was the worst day of my life"'
+incluirLista:
+  - "Past simple"
+  - "Past continuous"
+  - "Used to"
+  - "3+ connectors"
+  - "Emotion adjective"
+  - "Phrasal verb"
+rubricaId: null
