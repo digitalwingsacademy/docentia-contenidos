@@ -1,0 +1,12 @@
+tipo: escritura-guiada
+instrucciones: "Reflexiona brevemente sobre las diferencias entre los dos estilos narrativos que acabas de leer."
+secciones:
+  - id: diferencia-1
+    titulo: "Diferencia 1"
+    guia: "How does each writer describe emotions? Which one uses understatement?"
+    placeholder: "e.g. The British writer plays down the emotion by saying..."
+  - id: diferencia-2
+    titulo: "Diferencia 2"
+    guia: "Which blog uses more exclamations? What effect does this create?"
+    placeholder: "e.g. The Hispanic blog uses more exclamation marks, which..."
+rubricaId: null

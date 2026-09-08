@@ -11,13 +11,26 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { load as parseYaml } from "js-yaml";
-import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema, actividadYmlSchema, checklistYmlSchema } from "./schema";
+import type { z } from "zod";
+import { cursoYmlSchema, unidadYmlSchema, quizYmlSchema, actividadYmlSchema, checklistYmlSchema, tablaRubricaYmlSchema } from "./schema";
 
 const CURSOS_DIR = "cursos";
 const errors: string[] = [];
 
 function readYaml(path: string): unknown {
   return parseYaml(readFileSync(path, "utf8"));
+}
+
+function checkReferencedFile(cursoDir: string, unidadDir: string, archivo: string, schema: z.ZodType, contextoError: string) {
+  const path = join(cursoDir, "unidades", unidadDir, archivo);
+  if (!existsSync(path)) {
+    errors.push(`${contextoError}: referencia "${archivo}", que no existe`);
+    return;
+  }
+  const parsed = schema.safeParse(readYaml(path));
+  if (!parsed.success) {
+    errors.push(`${path}: ${parsed.error.message}`);
+  }
 }
 
 function checkOrdenSinHuecos(items: { orden: number }[], context: string) {
@@ -158,14 +171,15 @@ function validateCurso(slug: string) {
         }
 
         if (actividad.tipo === "revision-entre-pares") {
-          const checklistPath = join(cursoDir, "unidades", unidadDir, actividad.checklist);
-          if (!existsSync(checklistPath)) {
-            errors.push(`${archivoPath}: referencia el checklist "${actividad.checklist}", que no existe`);
-          } else {
-            const parsedChecklist = checklistYmlSchema.safeParse(readYaml(checklistPath));
-            if (!parsedChecklist.success) {
-              errors.push(`${checklistPath}: ${parsedChecklist.error.message}`);
-            }
+          checkReferencedFile(cursoDir, unidadDir, actividad.checklist, checklistYmlSchema, archivoPath);
+        }
+
+        if (actividad.tipo === "grabacion-audio") {
+          if (actividad.checklistPrevia) {
+            checkReferencedFile(cursoDir, unidadDir, actividad.checklistPrevia, checklistYmlSchema, archivoPath);
+          }
+          if (actividad.rubricaId) {
+            checkReferencedFile(cursoDir, unidadDir, actividad.rubricaId, tablaRubricaYmlSchema, archivoPath);
           }
         }
 

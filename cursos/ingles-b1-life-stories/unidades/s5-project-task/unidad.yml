@@ -1,0 +1,32 @@
+titulo: "Sesión 5 — Project Task"
+orden: 5
+fase: "Project Task"
+secciones:
+  - id: cultural-moment
+    archivo: cultural-moment.mdx
+    tipo: texto
+    titulo: "Cultural Moment: UK vs Hispanic Storytelling"
+    duracionMinutos: 15
+    orden: 1
+    obligatoria: true
+  - id: cultural-reflection
+    archivo: cultural-reflection.yml
+    tipo: actividad
+    titulo: "Cultural Moment: Reflexión"
+    duracionMinutos: 10
+    orden: 2
+    obligatoria: true
+  - id: can-do-tracker
+    archivo: can-do-tracker.yml
+    tipo: actividad
+    titulo: "Can-Do Tracker — Autoevaluación Final U1"
+    duracionMinutos: 10
+    orden: 3
+    obligatoria: true
+  - id: project-task-podcast
+    archivo: project-task-podcast.yml
+    tipo: actividad
+    titulo: 'PROJECT TASK: "My Life Story So Far"'
+    duracionMinutos: 60
+    orden: 4
+    obligatoria: true

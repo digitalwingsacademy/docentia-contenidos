@@ -1,0 +1,32 @@
+niveles: ["1 — Insuficiente", "2 — Básico", "3 — Competente", "4 — Excelente"]
+criterios:
+  - nombre: "Corrección gramatical"
+    descripciones:
+      - "Errores de tiempos impiden comprensión."
+      - "Past simple dominado; continuous con errores."
+      - "Buen control; contraste correcto en mayoría."
+      - "Integración fluida de past simple, continuous y used to."
+  - nombre: "Riqueza léxica"
+    descripciones:
+      - "Vocabulario muy limitado; repite 'then' y 'and'."
+      - "Adverbios básicos; life events limitados."
+      - "Adverbios variados + phrasal verbs; emociones diferenciadas."
+      - "Phrasal verbs y emociones diferenciadas (overwhelmed, relieved)."
+  - nombre: "Estructura Labov"
+    descripciones:
+      - "Sin orientación ni resolución."
+      - "Orientación y complicación; evaluación débil."
+      - "4 fases de Labov presentes y diferenciadas."
+      - "Labov dominado con evaluación reflexiva potente."
+  - nombre: "Adecuación al género"
+    descripciones:
+      - "Registro inadecuado; formato inexistente."
+      - "Registro generalmente coherente."
+      - "Registro narrativo correcto; inicio y cierre."
+      - "Registro, tono y voz narrativa mantenidos."
+  - nombre: "Fonología / ortografía"
+    descripciones:
+      - "-ed siempre mal pronunciado/escrito."
+      - "-ed con errores sistemáticos."
+      - "-ed discriminado en mayoría; ortografía aceptable."
+      - "-ed, weak forms y entonación dominadas."

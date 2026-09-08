@@ -1,0 +1,24 @@
+tipo: autoevaluacion-descriptores
+instrucciones: "Selecciona tu nivel en cada descriptor: 1 = No puedo … 4 = Puedo con soltura."
+escala: { min: 1, max: 4 }
+descriptores:
+  - id: 1
+    texto: "I can understand the main information in short narratives in clear, standard speech."
+  - id: 2
+    texto: "I can understand narratives (holidays, anecdotes) spoken at a slow, clear pace."
+  - id: 3
+    texto: "I can understand descriptions of places, events and feelings in narrative texts."
+  - id: 4
+    texto: "I can narrate experiences with feelings and describe real or imagined events."
+  - id: 5
+    texto: "I can write about experiences, describing feelings and reactions in cohesive texts."
+  - id: 6
+    texto: "I can participate spontaneously and express emotions (surprise, happiness, sadness)."
+  - id: 7
+    texto: "I can write personal letters describing experiences in reasonable detail."
+  - id: 8
+    texto: "I can follow a sequence of events using logical and temporal connectors."
+  - id: 9
+    texto: "I can show awareness of the Labov narrative structure in texts I read and write."
+  - id: 10
+    texto: "I can initiate, maintain and close simple face-to-face conversations."

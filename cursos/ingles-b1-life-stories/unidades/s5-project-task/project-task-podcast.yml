@@ -1,0 +1,17 @@
+tipo: grabacion-audio
+instrucciones: >-
+  PROJECT TASK: "My Life Story So Far" — 3 minutes. Include 3 key life events with past simple,
+  past continuous and used to; sequence adverbs and emotion vocabulary; a Labov structure with a
+  personal evaluation; and a 60-word intercultural comparison (your storytelling style vs.
+  British/American style).
+duracionGrabacionSegundos: 180
+preparacionSegundos: 0
+plantillaPlanificacion:
+  - titulo: "OPENING — Introduce yourself (30 sec)"
+    guia: "Hi, my name is… today I'm going to tell you about three important moments…"
+  - titulo: "EVENTS 1, 2 & 3 — Main narrative (2 min)"
+    guia: "Event 1 (past simple + continuous)… Event 2 (used to)… Event 3 (emotions)…"
+  - titulo: "EVALUATION + INTERCULTURAL (30 sec)"
+    guia: "Looking back… / Intercultural: In my narrative I tend to…, whereas British storytellers often…"
+checklistPrevia: project-task-checklist.yml
+rubricaId: life-story-analytic-rubric.yml

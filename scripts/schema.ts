@@ -71,11 +71,17 @@ export type RellenarHuecosYml = z.infer<typeof rellenarHuecosYmlSchema>;
 
 // Tipos de valoracion humana (docs/formato-actividades.md #3 en
 // docentia-plataforma): ninguno usa modo ni reintentos.
+export const fasePlanificacionSchema = z.object({
+  titulo: z.string().min(1),
+  guia: z.string().min(1),
+});
 export const grabacionAudioYmlSchema = z.object({
   tipo: z.literal("grabacion-audio"),
   instrucciones: z.string().min(1),
   duracionGrabacionSegundos: z.number().int().positive(),
   preparacionSegundos: z.number().int().min(0).default(0),
+  plantillaPlanificacion: z.array(fasePlanificacionSchema).optional(),
+  checklistPrevia: z.string().optional(),
   rubricaId: z.string().nullable().default(null),
 });
 export type GrabacionAudioYml = z.infer<typeof grabacionAudioYmlSchema>;
@@ -170,6 +176,18 @@ export const checklistYmlSchema = z.object({
 });
 export type ChecklistYml = z.infer<typeof checklistYmlSchema>;
 
+// Bloque reutilizable (docs/formato-actividades.md #4.3): tabla de referencia,
+// nunca corregida automaticamente contra ella.
+export const criterioRubricaSchema = z.object({
+  nombre: z.string().min(1),
+  descripciones: z.array(z.string().min(1)).min(2),
+});
+export const tablaRubricaYmlSchema = z.object({
+  niveles: z.array(z.string().min(1)).min(2),
+  criterios: z.array(criterioRubricaSchema).min(1),
+});
+export type TablaRubricaYml = z.infer<typeof tablaRubricaYmlSchema>;
+
 export const promptOpcionSchema = z.object({
   id: z.string().min(1),
   texto: z.string().min(1),
@@ -223,6 +241,18 @@ export const correccionErroresYmlSchema = z.object({
 });
 export type CorreccionErroresYml = z.infer<typeof correccionErroresYmlSchema>;
 
+export const descriptorSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  texto: z.string().min(1),
+});
+export const autoevaluacionDescriptoresYmlSchema = z.object({
+  tipo: z.literal("autoevaluacion-descriptores"),
+  instrucciones: z.string().min(1),
+  escala: z.object({ min: z.number().int(), max: z.number().int() }),
+  descriptores: z.array(descriptorSchema).min(1),
+});
+export type AutoevaluacionDescriptoresYml = z.infer<typeof autoevaluacionDescriptoresYmlSchema>;
+
 export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   rellenarHuecosYmlSchema,
   grabacionAudioYmlSchema,
@@ -236,6 +266,7 @@ export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   escrituraGuiadaYmlSchema,
   revisionEntreParesYmlSchema,
   correccionErroresYmlSchema,
+  autoevaluacionDescriptoresYmlSchema,
 ]);
 export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 
