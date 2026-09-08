@@ -1,0 +1,25 @@
+titulo: "Sesión 3 — Task Cycle 2"
+orden: 3
+fase: "Task Cycle 2"
+secciones:
+  - id: reading-unexpected-gift
+    archivo: reading-unexpected-gift.yml
+    tipo: actividad
+    titulo: 'Reading: "The Unexpected Gift"'
+    duracionMinutos: 25
+    orden: 1
+    obligatoria: true
+  - id: discourse-connectors
+    archivo: discourse-connectors.yml
+    tipo: actividad
+    titulo: "Mark the Words: Discourse Connectors"
+    duracionMinutos: 20
+    orden: 2
+    obligatoria: true
+  - id: gap-fill-marias-decision
+    archivo: gap-fill-marias-decision.yml
+    tipo: actividad
+    titulo: "Gap-fill: Sequence Adverbs & Connectors"
+    duracionMinutos: 20
+    orden: 3
+    obligatoria: true

@@ -136,6 +136,33 @@ export const ordenarYmlSchema = z.object({
 });
 export type OrdenarYml = z.infer<typeof ordenarYmlSchema>;
 
+// opcion-multiple reutiliza quizPreguntaSchema. Solo se implementa el
+// estimulo `texto` por ahora - `audio` necesita el mismo pipeline de
+// Storage que grabacion-audio.
+export const estimuloTextoSchema = z.object({
+  tipo: z.literal("texto"),
+  contenido: z.string().min(1),
+});
+export const opcionMultipleYmlSchema = z.object({
+  tipo: z.literal("opcion-multiple"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  estimulo: estimuloTextoSchema,
+  preguntas: z.array(quizPreguntaSchema).min(1),
+});
+export type OpcionMultipleYml = z.infer<typeof opcionMultipleYmlSchema>;
+
+export const marcarPalabrasYmlSchema = z.object({
+  tipo: z.literal("marcar-palabras"),
+  instrucciones: z.string().min(1),
+  modo: z.enum(["practica", "evaluacion"]).default("practica"),
+  reintentos: reintentosSchema.default({ maximos: "ilimitado", mostrarSolucionAl: "siempre" }),
+  texto: z.string().min(1),
+  palabrasCorrectas: z.array(z.string().min(1)).min(1),
+});
+export type MarcarPalabrasYml = z.infer<typeof marcarPalabrasYmlSchema>;
+
 export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   rellenarHuecosYmlSchema,
   grabacionAudioYmlSchema,
@@ -143,6 +170,8 @@ export const actividadYmlSchema = z.discriminatedUnion("tipo", [
   emparejarYmlSchema,
   clasificarYmlSchema,
   ordenarYmlSchema,
+  opcionMultipleYmlSchema,
+  marcarPalabrasYmlSchema,
 ]);
 export type ActividadYml = z.infer<typeof actividadYmlSchema>;
 

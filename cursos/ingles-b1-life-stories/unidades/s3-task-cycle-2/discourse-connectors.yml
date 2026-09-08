@@ -1,0 +1,23 @@
+tipo: marcar-palabras
+instrucciones: "Marca las 10 expresiones conectoras del texto (secuencia, contraste y causa-resultado)."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+texto: >-
+  First I had no idea what to expect. I arrived in the city on a cold January morning and
+  while I was waiting for my luggage, I met an elderly man who had lived there all his
+  life. Then I found my way to the student residence. It wasn't easy - however, I refused
+  to give up. As a result of my determination, I settled in quickly. Shortly after, I made
+  my first real friend. Eventually, the city began to feel like home. Meanwhile, my family
+  back in Madrid was worried. At that point, I decided to call them every Sunday. In the
+  end, moving there turned out to be the best decision of my life.
+palabrasCorrectas:
+  - "First"
+  - "while"
+  - "Then"
+  - "however"
+  - "As a result"
+  - "Shortly after"
+  - "Eventually"
+  - "Meanwhile"
+  - "At that point"
+  - "In the end"

@@ -1,0 +1,33 @@
+tipo: rellenar-huecos
+instrucciones: "Completa el texto con las 10 expresiones del banco. Puedes usar el banco de palabras o escribir directamente."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+bancoPalabras: true
+texto: |
+  {{1}} she researched every decision carefully. {{2}}, one day, she decided to quit her
+  job. {{3}} she handed in her resignation, she felt her hands shaking. {{4}}, she took a
+  deep breath and walked into her boss's office. {{5}}, she realised there was no turning
+  back. {{6}} of her decision, she started her own business. {{7}}, her colleagues
+  couldn't believe the news. {{8}}, the phone rang - it was her first client! {{9}}, the
+  business grew and she hired a team. {{10}}, it was the best decision she had ever made.
+huecos:
+  - id: 1
+    respuesta: "First"
+  - id: 2
+    respuesta: "Then"
+  - id: 3
+    respuesta: "Shortly before"
+  - id: 4
+    respuesta: "However"
+  - id: 5
+    respuesta: "At that point"
+  - id: 6
+    respuesta: "As a result"
+  - id: 7
+    respuesta: "Meanwhile"
+  - id: 8
+    respuesta: "Suddenly"
+  - id: 9
+    respuesta: "Eventually"
+  - id: 10
+    respuesta: "In the end"

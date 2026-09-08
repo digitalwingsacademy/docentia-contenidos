@@ -137,6 +137,25 @@ function validateCurso(slug: string) {
             errors.push(`${archivoPath}: posiciones duplicadas: [${[...new Set(dup)].join(", ")}]`);
           }
         }
+
+        if (actividad.tipo === "opcion-multiple") {
+          for (const pregunta of actividad.preguntas) {
+            const idsValidos = pregunta.opciones.map((o) => o.id);
+            if (!idsValidos.includes(pregunta.respuestaCorrectaId)) {
+              errors.push(
+                `${archivoPath}: la pregunta "${pregunta.id}" tiene respuestaCorrectaId "${pregunta.respuestaCorrectaId}" que no coincide con ninguna opcion (${idsValidos.join(", ")})`
+              );
+            }
+          }
+        }
+
+        if (actividad.tipo === "marcar-palabras") {
+          for (const palabra of actividad.palabrasCorrectas) {
+            if (!actividad.texto.includes(palabra)) {
+              errors.push(`${archivoPath}: "${palabra}" no aparece como substring literal de "texto"`);
+            }
+          }
+        }
       }
     }
 

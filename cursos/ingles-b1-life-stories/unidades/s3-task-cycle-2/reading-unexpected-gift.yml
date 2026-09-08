@@ -1,0 +1,84 @@
+tipo: opcion-multiple
+instrucciones: "Lee el texto (skimming, luego scanning) y responde. Fíjate en los phrasal verbs en negrita."
+modo: practica
+reintentos: { maximos: ilimitado, mostrarSolucionAl: nunca }
+estimulo:
+  tipo: texto
+  contenido: |
+    It was a Tuesday morning in November when everything changed for Laura Chen. She was
+    rushing through the crowded streets of Bristol, running late for work, when she came
+    across a small brown envelope lying on the pavement. Inside were three things: a faded
+    photograph, a handwritten letter, and a return address in Edinburgh.
+
+    The photograph showed an elderly couple standing outside a house. On the back, someone
+    had written: "Our first home, 1962." The letter was addressed to someone called Robert,
+    dated just three weeks earlier. In it, a woman called Margaret described how she had
+    grown up in Bristol and was looking back on her life with both joy and sadness. She
+    wrote about the friends she had gradually lost touch with over the years, and most
+    touchingly, the younger brother she had never been able to find since the family
+    separated in the 1970s.
+
+    Laura didn't hesitate. She carried on to work but spent the entire day thinking about
+    the letter. That evening, she set up a social media post describing what she had
+    found, including the return address but not the personal details. By the following
+    morning, the post had been shared hundreds of times.
+
+    Three days later, Laura received a message from a man called Robert — Margaret's
+    brother. He had been living in Bristol all along, less than two miles away. He
+    explained that he had been going through some difficult times and had given up hope
+    of ever finding his sister. Reading the post had been, in his words, "the most
+    overwhelming moment of my life."
+
+    Laura later described the experience as "surprisingly life-changing." "I used to walk
+    past things without noticing," she admitted, "but this taught me to pay attention." As
+    a result, Robert and Margaret eventually met for the first time in over forty years —
+    just before Christmas.
+preguntas:
+  - id: p1
+    enunciado: "Where was Laura when she found the envelope?"
+    opciones:
+      - { id: a, texto: "At her workplace" }
+      - { id: b, texto: "On the streets of Bristol" }
+      - { id: c, texto: "In Edinburgh" }
+      - { id: d, texto: "Outside a house" }
+    respuestaCorrectaId: b
+  - id: p2
+    enunciado: "What three items were inside the envelope?"
+    opciones:
+      - { id: a, texto: "A photo, a letter, and money" }
+      - { id: b, texto: "A photo, a letter, and an address" }
+      - { id: c, texto: "Two photos and a letter" }
+      - { id: d, texto: "A letter, a key, and an address" }
+    respuestaCorrectaId: b
+  - id: p3
+    enunciado: "Who wrote the handwritten letter?"
+    opciones:
+      - { id: a, texto: "Robert" }
+      - { id: b, texto: "Laura" }
+      - { id: c, texto: "Margaret" }
+      - { id: d, texto: "The elderly couple" }
+    respuestaCorrectaId: c
+  - id: p4
+    enunciado: "What did Laura do immediately after finding the letter?"
+    opciones:
+      - { id: a, texto: "She went straight home" }
+      - { id: b, texto: "She called the police" }
+      - { id: c, texto: "She carried on to work" }
+      - { id: d, texto: "She travelled to Edinburgh" }
+    respuestaCorrectaId: c
+  - id: p5
+    enunciado: "For how long had Robert and Margaret been separated?"
+    opciones:
+      - { id: a, texto: "About 10 years" }
+      - { id: b, texto: "About 20 years" }
+      - { id: c, texto: "Over 40 years" }
+      - { id: d, texto: "Over 60 years" }
+    respuestaCorrectaId: c
+  - id: p6
+    enunciado: "What did the experience teach Laura?"
+    opciones:
+      - { id: a, texto: "To use social media" }
+      - { id: b, texto: "To move to Edinburgh" }
+      - { id: c, texto: "To pay more attention" }
+      - { id: d, texto: "To find lost people" }
+    respuestaCorrectaId: c
